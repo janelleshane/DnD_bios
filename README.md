@@ -1,6 +1,7 @@
 # DnD_bios
-Crowdsourced dataset of D&amp;D character biographies
+Crowdsourced dataset of D&amp;D character biographies and results of syllable-level RNN training on this dataset.
 
+## Crowdsourced dataset
 
 Crowdsourced between 9/17/2017 and 10/24/2018 from readers of aiweirdness.com
 
@@ -24,3 +25,22 @@ We're going to build a dataset of D&D character backstories. If we get enough, r
 
 So, use the form below to tell the neural networks about your character's backstory. Or about your friend's character's backstory. You can submit as many of these as you want. No length limit - in fact, details are encouraged. For science!
 ```
+
+## 150k syllables of RNN output trained on the above dataset
+
+The RNN: torch-rnn by @learningtitans
+
+https://github.com/learningtitans/torch-rnn/blob/valle-syllables/doc/flags.md#preprocessing
+
+Used in syllable-level mode, American English dictionary
+
+Training checkpoint: 11000
+
+Training parameters used:
+`-model_type lstm`
+`-num_layers 3`
+`-rnn_size 512`
+`-seq_length 30`
+
+Sampling temperatures:
+`0.5` and `0.8`
